@@ -1,0 +1,53 @@
+.footer
+    &__container
+        @extend .header__container
+        align-items: flex-start
+        text-align: left
+    &-small
+        border-top: 1px solid white
+        min-height: 100px
+        display: flex
+        align-items: center
+        justify-content: center
+
+        font-size: 18px
+        color: $footerCol
+    &-main
+        padding: 100px 0 45px
+
+
+.listing-header 
+    font-weight: 600
+    font-size: 30px
+    margin-bottom: 30px
+.footer__listing-item 
+    color: #ccc
+    font-size: 24px
+    margin-bottom: 35px
+.footer__contact-icons 
+    margin-top: 40px
+    font-size: 24px
+    max-width: 175px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+@media screen and (max-width: 1280px) 
+    .footer__container
+        flex-wrap: wrap
+
+@media screen and (max-width: 800px) 
+    .footer-main
+        padding: 35px 0 45px
+
+    .footer__col
+        width: 50%
+
+    .listing-header
+        font-size: 24px
+        margin-top: 30px
+        margin-bottom: 14px
+
+    .footer__listing-item
+        font-size: 18px
+        margin-bottom: 14px

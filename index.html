@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg style="display: none;">
+
+        <symbol id="icon-bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="27" viewBox="0 0 25 27">
+            <image id="bell" width="25" height="27" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAbCAYAAACJISRoAAACbElEQVRIia2VXWiPcRTHP3vxkmJDoRG1oSw37iThBjFcmJiXhKTF0sold14uJFdSKGk3duNCya5MCkvKS0uJvC1q2ZrN65bpo2f9/vV4+v/3/w2nTs/zO8/5/b6/c57vOQc1RqvVR+pP9aY6OXLfiJYSJ8eBF8BiYAbQGLlvRGJBFgFtwCDQHtbxUiTUuepZ9Zt/Srd6TK3813QdAJ4D1cB2YCZQAswGmoH1wEtgTdGICqAfUfvVdaPcsEQ9qA6pdaNFks+4TB0Mzxj2HA4XOq+eU/erU4ul6zRwBrgf8WP3AicD874DQ4F5b4AdhdJVow6r0yMi2KMOqJvyfKsPZNmWL1271Y4IgMoAUJ+yLVCrUusGtTcp3Gy6qoB3EWnaDLwGroV1OXAbuJ7yaQU+AnVZkImh4IpJLdCR8hkGmoBxmX33ki4RW/FZSQ4ti/BLIjQLUhYOKCZPgFWhOAtJcvZK4HEWpAIYiAC5AUwB9qVsd4ETqXVjSH9bljVX1aORRbhB/aE2qqUpe1ko0K/q6nwUfpqhZTFN2s57tStcsDW8d+UAsiDjw1CaP5aBpE5QN6pX1J7Qx8YX6l3L1b7Q+MYCktN56i+1Il+DLAszoyc49efRZnWa+jBsvFzAL5G3alMaJLn1rsCKpNl9KsCmV8AXYBbQHUZwVQHfGqAFWAp0jljUU2rLX6aokHaqW3PfygPnbwGfgd6IGikmC4E5wJ2c38hPBlYADcCkPAdsCYXWnbLVhtS15/HvAy6G0U0uXcX0gXoo43NJvRCbvhinnYHayQBKaihhWlLpS/4nSKJJ6/gQKPpMXRtNAuU3L/fhWjGKw8wAAAAASUVORK5CYII="/>
+        </symbol>
+
+        <symbol id="icon-wallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+            <image id="wallet" width="24" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACOUlEQVRIibWVS4jNcRTHP78x0swobymvzBCGZCE2FsZCpFDKZliylFJKIRtJeQxZKGMxU5JHisRmIjVlQVw2MmgkFuS18MhCH/10rq6ZO3fGZU796n/O+Z5zfuf1+zMYqTVqq9ql9sbpClnNoA4qkVqnXlMvqIuK0Pwdsqyrq+RjsBucBAoppU3AUvVqPsCkkBUCU9Xtm9X7agr+pdqtXlGfqzOzLjDN1WSwFuhMKRn8TWBPSmk9cB5oCV1nYMtSbYUAM4AbfWTt6mdgDjA/ZD3AmgEzUBvUDvW1+qJ4gNZc6z74HcBK4CKwLGQTM7bE9q16oGiQMzgOvAI2AvNKnC0B1gEdwc8GlgNTgDxR7SHPmHPA3eA/ASt+ZwCsAvYBo4CxJecZ0KiuDmwhbr8NOJVS6g5dI/C0xO4PylPwAVgAbI6ylNKEKMETYDQwPnTZJvdiLvAOeF9isx84AbQBx3KADOgFDgNvBmrWIDQmXzYgC4Hi2PbURv13A3lxJgPfgW9VBiKm7xGwF3iYF6jwD876kbpBbVPr1TeV9mAozvo1FWiI8T6TB6eqAOouYHs01zKQr8ClX7342xJFCW6pLeoWdUQFbKGaDPK7cxQ4G+P7Bbg8ALa2mh9GHuUm4AEwC3hcDqROzwHyHuT3fvFQvatTgdvAaeAe8KMMbBqQ+3TwrwNEkPwebY1N70tNsU87Ukp3hm0PinzuwTh15P8MUko5wHXg0HAFyWO6EziSn2f143/wWR8jDMBPi8k2ac3uhAgAAAAASUVORK5CYII="/>
+        </symbol>
+
+        <symbol id="icon-st" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="26" viewBox="0 0 25 26">
+            <image id="Эллипс_6" data-name="Эллипс 6" width="25" height="26" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAaCAYAAABCfffNAAACvElEQVRIia2WyWtUQRDGfz0O4kJEPXiLmERvIiR9cJmL4gKKC6KJ/0HrwS2IxINHwUTJQQQx/QeoRFDjBpIBBVEDTiuoNzXG5eTBhAg5BLSlSI28mDczb0w+GN7MdL/6qqqrvmoTYyQrjA8GWAqMRWczv1iVxPiwBNgF7AM2AY1CoERfgefAAPAwOjteF4nxYSFwDDgNPAZuAy+AL9HZ38aHHLAS2AjsB7YCV4Dz0dmJmiTGhzbgBvAWOBOdfV8zHT6sAbqBdcCh6OyriiTGh81AP3A0Ottfy3gKWQdwWYmezCAxPrQCj4AD0dmn9RIkiArAHWBHdPa1/JfThQWaopOzIRBEZ58Bx8We2p0iAU4Bb6Kz12ZDkCC6Lva0cDD0lRYBI0AhyyEnYXwYVKPbU9ZWa4k35bQHXtZLkCGaD2JX7Oe12QaqeNul5SkYlbIGisDHxB6pnpbo7PA/r0sB7JRIWrXR0gjalaAjOiuS4oE+9dQoWVG+pxAIhoC2vHbu5wqBNOuzqE8hWaafLBC7jULSUEV3bgIO+GF8EIIQnT2ckUCiHTc+NEi6xowPyytsGo7OtgBlw93Gh5LxIVMkum8sr2raJN6mbOpSsh79LdGUgHZNXS1Iur/l9HAKVTaL99v0u9Vn+ZBHE+eWBlHpISF5IHpVIV096vGglmmfKnO5EGS9WdYSjiRxELgvHT9fPdtTFrS5gAruPXEiF52dlGED9Op4nTXUTq8OscmyQF4FFgOdcxRIp9oTu9PmySrt/BP/M7DK0MF1SQ49OjtCymRcC9zVA75Q141kKkUi7UeAvdHZd3/XUmb8Ch3B8+Sl6OxQBoINwEXgl+rc92nrFW4r4pWEfU574Zb20ydAJEiuStLA67X8pbPPinNp0de6d0k0W4Dd2ogipg3AT7keiZZJH8i1KTorUcwE8AfOgiG22BwAsQAAAABJRU5ErkJggg=="/>
+          </symbol>
+
+          <symbol version="1.1" id="icon-double-arr" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 30.7 30.7" xml:space="preserve">
+            <g>
+                <path d="M15.4,30.2L0.7,15.6c-1-1-1-2.6,0-3.5c1-1,2.6-1,3.5,0l11.1,11.1l11.1-11.1c1-1,2.6-1,3.5,0c1,1,1,2.6,0,3.5L15.4,30.2z
+                    M30,4.8c1-1,1-2.6,0-3.5c-1-1-2.6-1-3.5,0L15.4,12.3L4.3,1.2c-1-1-2.6-1-3.5,0c-1,1-1,2.6,0,3.5l14.6,14.6L30,4.8z"/>
+            </g>
+        </symbol>
+
+        <symbol version="1.1" id="icon-trustwallet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 158.7 183.2" style="enable-background:new 0 0 158.7 183.2;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#3375BB;}
+        </style>
+        <path class="st0" d="M79.3,6.9l4.2-5.5c-2.5-1.9-6-1.9-8.5,0L79.3,6.9z M151.8,28.2l6.9,0.1c0-3.8-3-7-6.8-7c0,0-0.1,0-0.1,0V28.2z
+            M79.3,176.3l-3.8,5.8c2.3,1.5,5.3,1.5,7.7,0L79.3,176.3z M6.9,28.2v-6.9c-3.8,0-6.9,3.1-6.9,6.9c0,0,0,0,0,0.1L6.9,28.2z
+            M75.1,12.4c31.4,24.3,67.3,22.8,76.7,22.8V21.3c-9.8,0-41,1.2-68.3-19.8L75.1,12.4z M144.9,28.1c-0.5,32.1-1.9,54.8-4.5,71.6
+            c-2.6,16.6-6.2,26.6-11,33.6c-4.8,7.3-10.8,11.6-19.7,16.9s-20.3,11.2-34.3,20.4l7.7,11.5c13.3-8.8,24.3-14.5,33.7-20.1
+            s17.8-11.9,24.1-21c6.3-9.4,10.5-21.6,13.2-39.2c2.7-17.4,4.1-41,4.6-73.5L144.9,28.1z M83.2,170.6c-13.9-9.3-25.3-15.1-34.2-20.4
+            s-14.9-9.6-19.7-16.9c-4.7-7-8.4-16.9-10.9-33.6c-2.6-16.8-3.9-39.4-4.5-71.6L0,28.3c0.5,32.4,2,56,4.6,73.4
+            c2.7,17.6,6.8,29.8,13.1,39.2c6.3,9.1,14.6,15.4,24,21s20.4,11.2,33.7,20.1L83.2,170.6z M6.9,35.1c9.3,0,45.3,1.6,76.6-22.8
+            L75.1,1.5C47.9,22.5,16.6,21.3,6.9,21.3L6.9,35.1z"/>
+        </symbol>
+
+        <symbol version="1.1" id="arr-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <g>
+            <g>
+                <path d="M123.6,6.3c-8.3,8.3-8.3,21.8,0,30.2L343.2,256L123.6,475.6c-8.3,8.3-8.3,21.8,0,30.2c8.3,8.3,21.8,8.3,30.2,0
+                    l234.7-234.7c4.2-4.2,6.3-9.6,6.3-15.1s-2.1-10.9-6.3-15.1L153.8,6.3C145.4-2.1,131.9-2.1,123.6,6.3z"/>
+            </g>
+        </g>
+        </symbol>
+        <symbol version="1.1" id="arr-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <g>
+            <g>
+                <path d="M388.4,505.8c8.3-8.3,8.3-21.8,0-30.2L168.8,256L388.4,36.4c8.3-8.3,8.3-21.8,0-30.2c-8.3-8.3-21.8-8.3-30.2,0
+                    L123.6,240.9c-4.2,4.2-6.3,9.6-6.3,15.1s2.1,10.9,6.3,15.1l234.7,234.7C366.6,514.1,380.1,514.1,388.4,505.8z"/>
+            </g>
+        </g>
+        </symbol>
+
+
+    
+    </svg>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo-outer">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="logo">
+                </div>
+                <div class="header__nav-icon js-nav-toggler nav-burger">
+                    <i class="fas fa-bars"></i>
+                    <!-- menu 1 -->
+                    <div class="header__nav" style="display: none;">
+                        <ul class="header__nav-wrapper ">
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fab fa-wikipedia-w"></i></div>
+                                    <div class="nav-item__desc n-pl">Wiki</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-boxes"></i></div>
+                                    <div class="nav-item__desc n-pl">Стартапы</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="far fa-check-circle"></i></div>
+                                    <div class="nav-item__desc n-pl">Новости</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fab fa-bitcoin"></i></div>
+                                    <div class="nav-item__desc n-pl">Купить крипту</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-list"></i></div>
+                                    <div class="nav-item__desc n-pl">Листинг</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-hand-holding-heart"></i></div>
+                                    <div class="nav-item__desc n-pl">Благотворительность</div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <!-- menu 2 -->
+                    <div class="header__nav shownav ">
+                        <ul class="header__nav-wrapper ">
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fab fa-wikipedia-w"></i></div>
+                                    <div class="nav-item__desc n-pl">Wiki</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-boxes"></i></div>
+                                    <div class="nav-item__desc n-pl">Стартапы</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-map-signs"></i></div>
+                                    <div class="nav-item__desc n-pl">Roadmap</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-list"></i></div>
+                                    <div class="nav-item__desc n-pl">Листинг</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="fas fa-user-friends"></i></div>
+                                    <div class="nav-item__desc n-pl">О нас</div>
+                                </div>
+                            </a></li>
+                            <li class="header__nav-item"><a href="#">
+                                <div class="nav-item__inner">
+                                    <div class="nav-item__icon"><i class="far fa-check-circle"></i></div>
+                                    <div class="nav-item__desc n-pl n-r">Новости</div>
+                                    <div class="nav-item__icon"><i class="fas fa-caret-down"></i></div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            <nav class="header__nav desktop-only">
+                <ul class="header__nav-wrapper">
+                    <li class="header__nav-item"><a href="#">
+                        <div class="nav-item__inner">
+                            <div class="nav-item__icon"></div>
+                            <div class="nav-item__desc">Торговля</div>
+                        </div>
+                    </a></li>
+                    <li class="header__nav-item"><a href="#">
+                        <div class="nav-item__inner">
+                            <div class="nav-item__icon desktop-only"><svg class="icon icon--white">
+                                <use xlink:href="#icon-wallet"></use>
+                              </svg></div>
+                            <div class="nav-item__desc n-pl">Кошелек</div>
+                        </div>
+                    </a></li>
+                    <li class="header__nav-item"><a href="#">
+                        <div class="nav-item__inner">
+                            <div class="nav-item__desc n-r">Ордера</div>
+                            <div class="nav-item__icon"><i class="fas fa-sort-down"></i></div>
+                        </div>
+                    </a></li>
+                    <li class="header__nav-item"><a href="#">
+                        
+                        <svg class="icon icon--white">
+                            <use xlink:href="#icon-st"></use>
+                          </svg>
+                    </a></li>
+                    <li class="header__nav-item"><a href="#">
+                        <svg class="icon icon--white">
+                            <use xlink:href="#icon-bell"></use>
+                          </svg>
+                    </a></li>
+                    <li class="header__nav-item"><a href="#">
+                        <div class="nav-item__inner">
+                            <div class="nav-item__desc n-r">Русский</div>
+                            <div class="nav-item__icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main_content">
+        <div class="bg1">
+            <div class="page-content">
+                <h1 class="section-heading">
+                    QTM
+                </h1>
+                <p class="section-description">
+                    BNB обеспечивает экосистему Quantum. Как нативная монета Quantum Chain,
+                    BNB имеет множество вариантов использования: как топливо
+                    для транзакций в цепочке, для оплаты комиссий за транзакции на бирже
+                    Quantum, совершения платежей в магазинах и многое другое.
+                </p>
+                <div class="main_content__get-more">
+                    <a href="#bg2">
+                        <span>Узнать больше</span>
+                        <span><svg >
+                            <use xlink:href="#icon-double-arr"></use>
+                          </svg></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="bg2" class="bg2 section">
+            <h1 class="section-heading">
+                Купить QTM
+            </h1>
+            <p class="section-description sm">
+                Купить BNB легко. Проверьте список ниже, чтобы найти место, которое подходит вам лучше всего!
+            </p>
+                <div class="section-bg2__outer">
+
+                    <div class="section-bg2__inner">
+    
+                        <div class="section-bg2__item item-framed ">
+                            <div class="section-bg2__descr">
+                                <div class="section-bg2__icon">
+                                    <img src="img/MetalPay.svg" alt="MetalPay">
+                                </div>
+                                <div class="section-bg2__about">
+                                    <p class="fwb">
+                                        Покупка и продажа BNB за USD
+                                    </p>
+                                    <p>
+                                        Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                                    </p>
+                                </div>
+                                <span class="section-bg2__item-name fwb">
+                                    Mental Pay
+                                </span>
+                            </div>
+                        </div>
+                                      
+                        <div class="section-bg2__item item-framed ">
+                            <div class="section-bg2__descr">
+                                <div class="section-bg2__icon">
+                                    <img src="img/dether.svg" alt="dether">
+                                </div>
+                                <div class="section-bg2__about">
+                                    <p class="fwb">
+                                        Купить BNB за наличные
+                                    </p>
+                                    <p>
+                                        Купить за наличные в 120 странах
+                                    </p>
+                                </div>
+                                <span class="section-bg2__item-name fwb">
+                                    Dether
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section-bg2__item item-framed ">
+                            <div class="section-bg2__descr">
+                                <div class="section-bg2__icon">
+                                    <img src="img/spend.svg" alt="spend">
+                                </div>
+                                <div class="section-bg2__about">
+                                    <p class="fwb">
+                                        Купить и продать BNB с банковского счета
+                                    </p>
+                                    <p>
+                                        Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                                    </p>
+                                </div>
+                                <span class="section-bg2__item-name fwb">
+                                    Spend
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section-bg2__item item-framed ">
+                            <div class="section-bg2__descr">
+                                <div class="section-bg2__icon">
+                                    <img src="img/MetalPay.svg" alt="MetalPay">
+                                </div>
+                                <div class="section-bg2__about">
+                                    <p class="fwb">
+                                        Покупка и продажа BNB за USD
+                                    </p>
+                                    <p>
+                                        Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                                    </p>
+                                </div>
+                                <span class="section-bg2__item-name fwb">
+                                    Mental Pay
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section-bg2__item item-framed ">
+                            <div class="section-bg2__descr">
+                                <div class="section-bg2__icon">
+                                    <img src="img/dether.svg" alt="dether">
+                                </div>
+                                <div class="section-bg2__about">
+                                    <p class="fwb">
+                                        Купить BNB за наличные
+                                    </p>
+                                    <p>
+                                        Купить за наличные в 120 странах
+                                    </p>
+                                </div>
+                                <span class="section-bg2__item-name fwb">
+                                    Dether
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-nav ">
+                        <div class="arr-prev">
+                            <svg >
+                                <use xlink:href="#arr-left"></use>
+                              </svg>
+                        </div>
+                        <span class="current">01</span> / <span class="total">05</span>
+                        <div class="arr-next">
+                            <svg >
+                                <use xlink:href="#arr-right"></use>
+                              </svg>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <div class="bg3 section">
+            <h1 class="section-heading">
+                Хранить QTM
+            </h1>
+            <p class="section-description sm">
+                Надежно храните свои BNB с помощью следующих кошельков, каждый из из них поддерживает Quantum Chain.
+            </p>
+            <div class="section-bg3__inner section__container ">
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg3__item item-framed">
+                    <div class="section-bg3__descr">
+                        <div class="section-bg3__icon">
+                            <svg>
+                                <use xlink:href="#icon-trustwallet"></use>
+                              </svg>
+                        </div>
+                        <span class="section-bg3__item-name">
+                            Trust Wallet
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg4 section">
+            <div class="bg4_section-inner ">
+                <div class="bg4__text">
+                    BNB. В качестве нативного
+                    актива для Quantum Chain,
+                    эта монета лежит в основе
+                    экосистемы Quantum.
+                </div>
+                <div class="bg4__img">
+                    <img src="img/coin.png" alt="coin">
+                </div>
+            </div>
+        </div>
+        <div class="bg5 section">
+            <h1 class="section-heading">
+                Использовать QTM
+            </h1>
+            <p class="section-description sm">
+                Купить BNB легко. Проверьте список ниже, чтобы найти место, которое подходит вам лучше всего!
+            </p>
+            <div class="section-bg5__inner ">
+                <div class="section-bg5__item item-framed">
+                    <div class="section-bg5__descr">
+                        <div class="section-bg5__icon">
+                            <img src="img/gift.svg" alt="gift">
+                        </div>
+                        <div class="section-bg5__about">
+                            <p class="fwb">
+                                Покупка виртуальных подарков
+                            </p>
+                            <p>
+                                Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                            </p>
+                        </div>
+                        <span class="section-bg5__item-name fwb">
+                            Gifto
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg5__item item-framed">
+                    <div class="section-bg5__descr">
+                        <div class="section-bg5__icon">
+                            <img src="img/gift.svg" alt="gift">
+                        </div>
+                        <div class="section-bg5__about">
+                            <p class="fwb">
+                                Покупка виртуальных подарков
+                            </p>
+                            <p>
+                                Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                            </p>
+                        </div>
+                        <span class="section-bg5__item-name fwb">
+                            Gifto
+                        </span>
+                    </div>
+                </div>
+                <div class="section-bg5__item item-framed">
+                    <div class="section-bg5__descr">
+                        <div class="section-bg5__icon">
+                            <img src="img/gift.svg" alt="gift">
+                        </div>
+                        <div class="section-bg5__about">
+                            <p class="fwb">
+                                Покупка виртуальных подарков
+                            </p>
+                            <p>
+                                Покупка и продажа BNB в USD со страхового банковского счета FDIC
+                            </p>
+                        </div>
+                        <span class="section-bg5__item-name fwb">
+                            Gifto
+                        </span>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer__container">
+                <div class="footer__col listing">
+                    <div class="listing-header">
+                        О нас
+                    </div>
+                    <ul class="footer__listing-wrapper">
+                        <li class="footer__listing-item"><a href="#"> О нас </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Бизнес-контакты </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Сообщество </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Новости </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Условия </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Конфиденциальность </a> </li>
+                        <li class="footer__listing-item"><a href="#"> FAQ </a> </li>
+                    </ul>
+                </div>
+                <div class="footer__col listing">
+                    <div class="listing-header">
+                        Продукты
+                    </div>
+                    <ul class="footer__listing-wrapper">
+                        <li class="footer__listing-item"><a href="#"> Exchange </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Card </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Благотворительность </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Инвест </a> </li>
+                        <li class="footer__listing-item"><a href="#"> Wiki </a> </li>                        
+                    </ul>
+                </div>
+                <div class="footer__col listing">
+                    <div class="listing-header">
+                        Услуги
+                    </div>
+                    <ul class="footer__listing-wrapper">
+                        <li class="footer__listing-item"><a href="#"> Комиссии </a></li>
+                        <li class="footer__listing-item"><a href="#"> Вакансии </a></li>
+                        <li class="footer__listing-item"><a href="#"> Наш Токен 1 </a></li>
+                        <li class="footer__listing-item"><a href="#"> Наш Токен 2 </a></li>
+                        <li class="footer__listing-item"><a href="#"> Листинг </a></li>
+                    </ul>
+                </div>
+                <div class="footer__col contacts">
+                   <div class="footer__logo">
+                        <img src="img/white_logo.png" alt="logo">
+                   </div>
+                   <div class="footer__contact-icons">
+                       <a href="#"><i class="fab fa-facebook-f"></i></a>
+                       <a href="#"><i class="fab fa-twitter"></i></a>
+                       <a href="#"><i class="fab fa-youtube"></i></a>
+                       <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-small">
+            © 2020 Quantum.com. All rights reserved
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>

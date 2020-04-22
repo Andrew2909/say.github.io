@@ -1,0 +1,78 @@
+@import 'colors', 'fonts'
+    
+.header 
+    min-height: 72px
+    padding: 10px 0
+    &__container
+        max-width: 1780px
+        margin: 0 auto
+        padding: 0 $gap
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__logo-outer
+        display: flex
+        align-items: center
+    &__logo
+        margin-right: $gap
+
+    &__nav-wrapper
+        display: flex
+        align-items: center  
+        justify-content: space-between
+        min-width: 500px
+    &__nav-item
+        font-size: 14px
+        position: relative
+        &:hover
+            color: $linkHover
+.nav-item__inner 
+    display: flex
+    align-items: center     
+.nav-item__desc 
+    &.n-pl
+        margin-left: $gap/2
+    &.n-r 
+        margin-right: $gap/2
+        
+.nav-burger
+    position: relative
+    .header__nav
+        position: absolute
+        top: 200%
+        max-width: 222px
+        z-index: 999
+        background-color: $mainBg
+        transition: all .4s ease
+        &.shownav
+            opacity: 0
+            z-index: -1
+    .header__nav-wrapper
+        flex-direction: column
+        width: 100%
+        align-items: flex-start
+        padding-left: $gap
+
+    .header__nav-item
+        padding: $gap/2 0
+
+
+@media screen and (max-width: 990px)
+    
+    .header__container
+        flex-direction: column
+        position: relative  
+    .nav-burger
+        position: static
+        .header__nav
+            top: 100%
+            right: 0
+            left: 0
+            max-width: initial
+        .header__nav-wrapper
+            align-items: center
+    .header__logo-outer
+        width: 100%
+        justify-content: space-between
+    
